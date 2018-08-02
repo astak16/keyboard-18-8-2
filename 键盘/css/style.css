@@ -1,0 +1,156 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #DDDDDD;
+    position: relative;
+}
+.layout{
+    background:rgba(0,0,0,0.3);
+    border-radius: 10px;
+    padding:20px;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.5);
+}
+.wrapper{
+    width:1000px;
+}
+:root{
+    --h:60px;
+    --w:60px;
+}
+.wrapper .row{
+    display: flex;
+    justify-content: space-between;
+}
+/* 设置键盘尺寸 */
+.wrapper .row kbd{
+    display: inline-block;
+    height:calc(var(--h));
+    line-height:calc(var(--h));
+    width:calc(var(--w));
+    vertical-align: top;
+    border-radius:8px;
+    margin:0 0 8px 0;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    background:#000;
+    color:#fff;
+    text-align: center;
+    font-size:24px;
+}
+.wrapper .row:nth-child(1) kbd{
+    font-size:10px;
+    height:calc(var(--h) * 0.4);
+    line-height: calc(var(--h) * 0.4);
+    width:calc(var(--w) * 1);
+    border-radius:8px;
+}
+.wrapper .row:nth-child(2) kbd:last-child,
+.wrapper .row:nth-child(3) kbd:first-child{
+    width:calc(var(--w) * 1.3);
+    font-size:16px;
+}
+.wrapper .row:nth-child(4) kbd:last-child,
+.wrapper .row:nth-child(4) kbd:first-child{
+    width:calc(var(--w) * 1.7);
+    font-size:16px;
+}
+.wrapper .row:nth-child(5) kbd:last-child,
+.wrapper .row:nth-child(5) kbd:first-child{
+    width:calc(var(--w) * 2.25);
+    font-size:16px;
+}
+.wrapper .row:nth-child(6) kbd{
+    font-size:16px;
+}
+.wrapper .row:nth-child(6) kbd:nth-child(5){
+    width:calc(var(--w) * 5.8);
+}
+
+/* 键盘两排内容 */
+.wrapper .row:nth-child(2) kbd,
+.wrapper .row:nth-child(3) kbd,
+.wrapper .row:nth-child(4) kbd,
+.wrapper .row:nth-child(5) kbd{
+    display: flex;
+    flex-direction: column;
+}
+/* 第2行 */
+.wrapper .row:nth-child(2) kbd span{
+    height:50%;
+    line-height: 50%;
+    padding-top:10px;
+}
+.wrapper .row:nth-child(2) kbd:last-child span,
+.wrapper .row:nth-child(2) kbd:nth-last-of-type(3) span:first-child{
+    padding:0
+}
+/* 第3行 */
+.wrapper .row:nth-child(3) kbd:nth-last-of-type(1) span,
+.wrapper .row:nth-child(3) kbd:nth-last-of-type(2) span,
+.wrapper .row:nth-child(3) kbd:nth-last-of-type(3) span{
+    height:50%;
+    line-height: 50%;
+    padding-top:10px;
+}
+/* 第4行 */
+.wrapper .row:nth-child(4) kbd:nth-last-of-type(2) span,
+.wrapper .row:nth-child(4) kbd:nth-last-of-type(3) span{
+    height:50%;
+    line-height: 50%;
+    padding-top:10px;
+}
+.wrapper .row:nth-child(4) kbd:nth-last-of-type(2) span:first-child{
+    padding-top:15px;
+}
+.wrapper .row:nth-child(4) kbd:nth-last-of-type(3) span:last-child {
+    padding-top: 5px;
+}
+
+/* 第5行 */
+.wrapper .row:nth-child(5) kbd:nth-last-of-type(2) span,
+.wrapper .row:nth-child(5) kbd:nth-last-of-type(3) span:first-child,
+.wrapper .row:nth-child(5) kbd:nth-last-of-type(4) span:first-child{
+    height:50%;
+    line-height: 50%;
+    padding-top:10px;
+}
+.wrapper .row:nth-child(5) kbd:nth-last-of-type(3) span:last-child,
+.wrapper .row:nth-child(5) kbd:nth-last-of-type(4) span:last-child{
+    height:50%;
+    line-height: 50%;
+    padding-bottom:5px;
+}
+
+/* 方向键 */
+.wrapper .row:nth-child(6) kbd:nth-last-of-type(1),
+.wrapper .row:nth-child(6) kbd:nth-last-of-type(2),
+.wrapper .row:nth-child(6) kbd:nth-last-of-type(3){
+    position: relative;
+    background: transparent;
+    box-shadow: none;
+}
+.wrapper .row:nth-child(6) kbd:nth-last-of-type(2) span,
+.wrapper .row:nth-child(6) kbd:nth-last-of-type(1) span:last-child,
+.wrapper .row:nth-child(6) kbd:nth-last-of-type(3) span:last-child{
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    font-size:12px;
+    height:calc(var(--h) * 0.45);
+    line-height: calc(var(--h) * 0.45);
+    width:calc(var(--w) * 1);
+    border-radius:8px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    background:#000;
+}
+.wrapper .row:nth-child(6) kbd:nth-last-of-type(2) span:first-child{
+    top:0;
+}
+
